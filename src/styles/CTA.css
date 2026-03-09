@@ -1,0 +1,113 @@
+.cta {
+  position: relative;
+  padding: var(--spacing-3xl) var(--spacing-lg);
+  overflow: hidden;
+}
+
+.cta__background {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #061833 0%, #0a2a52 55%, #1a447b 100%);
+  z-index: 1;
+}
+
+.cta__background::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(122, 168, 234, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(61, 119, 191, 0.2) 0%, transparent 50%);
+}
+
+.cta .container {
+  position: relative;
+  z-index: 2;
+}
+
+.cta__content {
+  text-align: center;
+  color: white;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta__content h2 {
+  font-size: var(--type-h2);
+  margin-bottom: var(--spacing-lg);
+  color: white;
+}
+
+.cta__content p {
+  font-size: var(--type-lead);
+  line-height: 1.7;
+  opacity: 0.95;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.cta__button {
+  padding: var(--spacing-md) var(--spacing-2xl);
+  font-size: 1.125rem;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-lg);
+  background: white;
+  color: var(--color-primary-deep);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.cta__button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.cta__info {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  backdrop-filter: blur(10px);
+}
+
+.cta__info p {
+  margin: var(--spacing-md) 0;
+  font-size: var(--type-small);
+  opacity: 1;
+}
+
+.cta__info p:last-child {
+  margin-bottom: 0;
+}
+
+.cta__info strong {
+  color: var(--color-primary-lighter);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cta {
+    padding: var(--spacing-2xl) var(--spacing-md);
+  }
+
+  .cta__content h2 {
+    font-size: clamp(1.7rem, 5vw, 2.4rem);
+  }
+
+  .cta__content p {
+    font-size: var(--type-body);
+  }
+
+  .cta__button {
+    width: 100%;
+  }
+
+  .cta__info {
+    padding: var(--spacing-lg);
+  }
+
+  .cta__info p {
+    font-size: var(--type-small);
+  }
+}

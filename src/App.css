@@ -1,0 +1,72 @@
+/* App.css - Estilos generales de la aplicación */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scroll suave para toda la página */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Asegurar que las secciones tengan ancho completo */
+section {
+  width: 100%;
+}
+
+/* Estilos para el contenedor global */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+/* Utilidades de animación */
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll animado suave */
+main {
+  flex: 1;
+}
+
+/* Garantizar que todos los botones tengan el mismo estilo base */
+button {
+  font-family: var(--font-primary);
+  border: none;
+  border-radius: var(--radius-lg);
+  transition: all 0.3s ease;
+}
+
+button:focus {
+  outline: 2px solid var(--color-primary-light);
+  outline-offset: 2px;
+}
+
+/* Estilos para accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Impresión */
+@media print {
+  .no-print {
+    display: none;
+  }
+}

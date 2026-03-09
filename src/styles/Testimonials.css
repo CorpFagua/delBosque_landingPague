@@ -1,0 +1,94 @@
+.testimonials {
+  padding: var(--spacing-3xl) var(--spacing-lg);
+  background: linear-gradient(180deg, #081c38 0%, #0a2448 50%, #061833 100%);
+}
+
+.testimonials__header {
+  text-align: center;
+  margin-bottom: var(--spacing-3xl);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.testimonials__header h2 {
+  color: var(--color-neutral-white);
+  margin-bottom: var(--spacing-lg);
+}
+
+.testimonials__header p {
+  color: var(--color-neutral-light-gray);
+  font-size: var(--type-lead);
+  line-height: 1.7;
+}
+
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--spacing-2xl);
+}
+
+.testimonial-card {
+  padding: var(--spacing-2xl);
+  border-radius: var(--radius-xl);
+  background: rgba(10, 36, 72, 0.86);
+  border: 1px solid rgba(122, 168, 234, 0.28);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-card:hover {
+  border-color: rgba(122, 168, 234, 0.65);
+  background: linear-gradient(135deg, rgba(12, 44, 86, 0.94) 0%, rgba(14, 56, 106, 0.88) 100%);
+}
+
+.testimonial-card__rating {
+  margin-bottom: var(--spacing-lg);
+}
+
+.star {
+  color: var(--color-accent-cyan);
+  font-size: 1.25rem;
+  margin-right: var(--spacing-xs);
+}
+
+.testimonial-card__content {
+  flex: 1;
+  color: var(--color-neutral-white);
+  font-size: var(--type-body);
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-lg) 0;
+  border-top: 2px solid rgba(142, 166, 204, 0.45);
+  border-bottom: 2px solid rgba(142, 166, 204, 0.45);
+}
+
+.testimonial-card__author h4 {
+  color: var(--color-primary-lighter);
+  margin: 0 0 var(--spacing-xs) 0;
+  font-size: var(--type-h4);
+}
+
+.testimonial-card__author p {
+  color: var(--color-neutral-light-gray);
+  font-size: var(--type-small);
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .testimonials {
+    padding: var(--spacing-2xl) var(--spacing-md);
+  }
+
+  .testimonials__grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  .testimonial-card {
+    padding: var(--spacing-xl);
+  }
+}
