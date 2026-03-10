@@ -51,15 +51,15 @@ export const Hero = () => {
           animate="visible"
         >
           <motion.div variants={itemVariants} className="hero__badge">
-            <span>Registro Sanitario INVIMA · Cota, Cundinamarca</span>
+            <span>Certificados INVIMA · Entregas en Bogotá y la Sabana de Bogotá</span>
           </motion.div>
 
           <motion.h1 variants={itemVariants} className="hero__title">
-            Agua purificada para operaciones que no pueden parar
+            Agua purificada para tu empresa <span className="highlight">sin complicaciones</span>
           </motion.h1>
 
           <motion.p variants={itemVariants} className="hero__subtitle">
-            Botellones de 20L con entrega programada a colegios, clínicas, oficinas y obras en Cota y Sabana de Bogotá. Facturación empresarial y gestor dedicado.
+            Botellones de 20L con entrega programada a colegios, clínicas, oficinas y obras en Bogotá y Sabana de Bogotá. Facturación empresarial y gestor dedicado.
           </motion.p>
 
           <motion.div variants={itemVariants} className="hero__cta-group">

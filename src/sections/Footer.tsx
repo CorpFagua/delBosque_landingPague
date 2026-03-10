@@ -72,7 +72,7 @@ export const Footer = () => {
             <p>
               <strong>Ubicación:</strong>
               <br />
-              Bogotá, Colombia
+              Sabana de Bogotá y Bogotá
             </p>
           </div>
         </div>
