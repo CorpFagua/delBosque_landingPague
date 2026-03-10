@@ -1,0 +1,106 @@
+.corporate-deals {
+  padding: 5rem 0;
+  background: #FFFFFF;
+  position: relative;
+}
+
+.corporate-deals__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.corporate-deals__header h2 {
+  font-size: clamp(2rem, 4.2vw, 3.1rem);
+  color: #0A2A52;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.corporate-deals__header p {
+  font-size: 1.125rem;
+  color: #8EA6CC;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.corporate-deals__benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.benefit-item {
+  background: linear-gradient(135deg, #F8FBFF 0%, #EAF1FF 100%);
+  border-radius: 1rem;
+  padding: 2rem;
+  border-left: 4px solid #0A2A52;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.benefit-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(10, 42, 82, 0.1);
+  border-left-color: #3D77BF;
+}
+
+.benefit-item__icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.benefit-item h3 {
+  font-size: 1.1rem;
+  color: #0A2A52;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.benefit-item p {
+  font-size: 0.95rem;
+  color: #8EA6CC;
+  line-height: 1.6;
+}
+
+.corporate-deals__cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.corporate-deals__button {
+  background: linear-gradient(135deg, #0A2A52 0%, #1A447B 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.05rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(10, 42, 82, 0.2);
+}
+
+.corporate-deals__button:hover {
+  box-shadow: 0 10px 30px rgba(10, 42, 82, 0.3);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .corporate-deals {
+    padding: 3rem 0;
+  }
+
+  .corporate-deals__benefits {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .corporate-deals__button {
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+  }
+}

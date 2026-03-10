@@ -1,9 +1,12 @@
 import { Header } from './components/Header';
 import { Hero } from './sections/Hero';
 import { Benefits } from './sections/Benefits';
+import { Sectors } from './sections/Sectors';
+import { CorporateDeals } from './sections/CorporateDeals';
+import { Products } from './sections/Products';
 import { Process } from './sections/Process';
 import { Certifications } from './sections/Certifications';
-import { Testimonials } from './sections/Testimonials';
+import { ContactForm } from './sections/ContactForm';
 import { CTA } from './sections/CTA';
 import { Footer } from './sections/Footer';
 import './App.css';
@@ -14,9 +17,12 @@ function App() {
       <Header />
       <Hero />
       <Benefits />
+      <Sectors />
+      <CorporateDeals />
+      <Products />
       <Process />
       <Certifications />
-      <Testimonials />
+      <ContactForm />
       <CTA />
       <Footer />
     </>

@@ -85,6 +85,30 @@
   color: var(--color-primary-lighter);
 }
 
+.cta__premium {
+  margin-top: var(--spacing-2xl);
+  padding-top: var(--spacing-2xl);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.cta__premium p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .cta {

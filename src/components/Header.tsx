@@ -21,9 +21,9 @@ export const Header = () => {
   const navItems = [
     { label: 'Inicio', href: '#' },
     { label: 'Beneficios', href: '#Benefits' },
-    { label: 'Proceso', href: '#Process' },
-    { label: 'Certificaciones', href: '#Certifications' },
-    { label: 'Testimonios', href: '#Testimonials' },
+    { label: 'Sectores', href: '#Sectors' },
+    { label: 'Convenios', href: '#CorporateDeals' },
+    { label: 'Productos', href: '#Products' },
   ];
 
   return (
@@ -64,11 +64,11 @@ export const Header = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
             onClick={() => {
-              const whatsappLink = `https://wa.me/573001234567?text=Hola%20delbosque,%20me%20interesa%20ordenar`;
-              window.open(whatsappLink, '_blank');
+              const target = document.getElementById('ContactForm');
+              target?.scrollIntoView({ behavior: 'smooth' });
             }}
           >
-            Pedir ahora
+            Cotización
           </motion.button>
 
           <button

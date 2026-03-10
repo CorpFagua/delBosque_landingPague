@@ -9,34 +9,34 @@ interface BenefitCard {
 
 const benefits: BenefitCard[] = [
   {
-    icon: '💧',
-    title: 'Pureza Garantizada',
-    description: 'Proceso de filtración de 5 etapas con control de calidad certificado INVIMA.',
+    icon: '✈️',
+    title: 'Prioridad Logística',
+    description: 'Entregas programadas con máxima confiabilidad y puntualidad en tu empresa o institución.',
+  },
+  {
+    icon: '💰',
+    title: 'Precios Especiales por Volumen',
+    description: 'Descuentos corporativos según tus necesidades de abastecimiento y consumo mensual.',
+  },
+  {
+    icon: '🤝',
+    title: 'Atención Personalizada',
+    description: 'Gestor dedicado disponible para consultas, pedidos y solución de cualquier inquietud.',
+  },
+  {
+    icon: '📅',
+    title: 'Programación Flexible',
+    description: 'Entregas semanales o mensuales según tu conveniencia y calendario empresarial.',
   },
   {
     icon: '🛡️',
-    title: 'Control Sanitario',
-    description: 'Certificaciones sanitarias vigentes y análisis microbiológicos regulares.',
+    title: 'Certificación INVIMA',
+    description: 'Garantía sanitaria completa con análisis microbiológicos regulares certificados.',
   },
   {
-    icon: '🚚',
-    title: 'Entrega a Domicilio',
-    description: 'Entregas rápidas y confiables en toda Bogotá sin costo adicional.',
-  },
-  {
-    icon: '♻️',
-    title: 'Sostenibilidad',
-    description: 'Garrafones reutilizables que respetan el medio ambiente.',
-  },
-  {
-    icon: '🌡️',
-    title: 'Temperatura Controlada',
-    description: 'Nuestros vehículos mantienen la temperatura óptima durante la entrega.',
-  },
-  {
-    icon: '⭐',
-    title: 'Servicio Premium',
-    description: 'Atención personalizada y respuesta rápida a tus necesidades.',
+    icon: '🏢',
+    title: 'Soluciones a Escala',
+    description: 'Experiencia en abastecimiento a colegios, hospitales, empresas y construcciones.',
   },
 ];
 
@@ -71,8 +71,8 @@ export const Benefits = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2>¿Por qué elegir delbosque?</h2>
-          <p>Combinamos tecnología de punta con compromiso sanitario para garantizar tu bienestar.</p>
+          <h2>Beneficios de Trabajar con Nosotros</h2>
+          <p>Soluciones de hidratación empresarial diseñadas para garantizar calidad, eficiencia y confianza en cada entrega.</p>
         </motion.div>
 
         <motion.div

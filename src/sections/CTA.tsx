@@ -23,28 +23,32 @@ export const CTA = () => {
         viewport={{ once: true }}
       >
         <div className="cta__content">
-          <h2>¿Listo para cambiar a agua de calidad premium?</h2>
-          <p>Contacta con nosotros hoy mismo y conoce nuestros planes especiales para tu hogar o negocio.</p>
+          <h2>Estamos Listos para Abastecer tu Empresa</h2>
+          <p>Nuestro equipo de profesionales está disponible para brindarte una solución personalizada según las necesidades de tu negocio o institución.</p>
 
           <motion.button
             className="btn-primary cta__button"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
             onClick={() => {
-              const whatsappLink = `https://wa.me/573001234567?text=Hola%20delbosque,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20sus%20planes`;
-              window.open(whatsappLink, '_blank');
+              const target = document.getElementById('ContactForm');
+              target?.scrollIntoView({ behavior: 'smooth' });
             }}
           >
-            Contactar por WhatsApp
+            Obtener Cotización Empresarial
           </motion.button>
 
           <div className="cta__info">
             <p>
-              <strong>📞 Atención al cliente:</strong> Disponible de lunes a domingo, 8 AM a 6 PM
+              <strong>📞 Pedidos:</strong> WhatsApp +57 300 123 4567
             </p>
             <p>
-              <strong>🚚 Entrega:</strong> Mismo día en Bogotá
+              <strong>💼 Cotizaciones Empresariales:</strong> Disponibles de lunes a viernes, 8 AM a 5 PM
             </p>
+          </div>
+
+          <div className="cta__premium">
+            <p>⭐ Aliado estratégico en soluciones de hidratación empresarial</p>
           </div>
         </div>
       </motion.div>

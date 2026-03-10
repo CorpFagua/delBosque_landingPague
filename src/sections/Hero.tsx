@@ -51,16 +51,15 @@ export const Hero = () => {
           animate="visible"
         >
           <motion.div variants={itemVariants} className="hero__badge">
-            <span>Pureza Certificada INVIMA</span>
+            <span>Soluciones Empresariales Certificadas</span>
           </motion.div>
 
           <motion.h1 variants={itemVariants} className="hero__title">
-            Agua Purificada de Calidad Premium
+            Hidratación Profesional para tu Empresa
           </motion.h1>
 
           <motion.p variants={itemVariants} className="hero__subtitle">
-            Control sanitario certificado, tecnología de purificación de última generación
-            y entrega a domicilio en toda Cota y sus alrededores. Confianza en cada gota.
+            En Agua Delbosque trabajamos con estándares profesionales de purificación y logística eficiente para abastecer empresas, colegios, clínicas y construcciones.
           </motion.p>
 
           <motion.div variants={itemVariants} className="hero__cta-group">
@@ -69,11 +68,11 @@ export const Hero = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => {
-                const whatsappLink = `https://wa.me/573001234567?text=Hola%20delbosque,%20me%20interesa%20ordenar%20agua%20purificada`;
-                window.open(whatsappLink, '_blank');
+                const target = document.getElementById('ContactForm');
+                target?.scrollIntoView({ behavior: 'smooth' });
               }}
             >
-              Pedir por WhatsApp
+              Solicitar Información
             </motion.button>
 
             <motion.a
