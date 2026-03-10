@@ -1,42 +1,44 @@
 import { motion } from 'framer-motion';
+import { Truck, CircleDollarSign, Headset, CalendarClock, ShieldCheck, Building2 } from 'lucide-react';
+import type { ReactNode } from 'react';
 import '../styles/Benefits.css';
 
 interface BenefitCard {
-  icon: string;
+  icon: ReactNode;
   title: string;
   description: string;
 }
 
 const benefits: BenefitCard[] = [
   {
-    icon: '✈️',
-    title: 'Prioridad Logística',
-    description: 'Entregas programadas con máxima confiabilidad y puntualidad en tu empresa o institución.',
+    icon: <Truck size={28} strokeWidth={1.5} />,
+    title: 'Entrega directa en tu sede',
+    description: 'Llevamos los botellones hasta tus instalaciones en el horario que tu operación necesite.',
   },
   {
-    icon: '💰',
-    title: 'Precios Especiales por Volumen',
-    description: 'Descuentos corporativos según tus necesidades de abastecimiento y consumo mensual.',
+    icon: <CircleDollarSign size={28} strokeWidth={1.5} />,
+    title: 'Precios por volumen',
+    description: 'A mayor consumo mensual, mejor tarifa. Cotizamos según la cantidad que tu empresa requiera.',
   },
   {
-    icon: '🤝',
-    title: 'Atención Personalizada',
-    description: 'Gestor dedicado disponible para consultas, pedidos y solución de cualquier inquietud.',
+    icon: <Headset size={28} strokeWidth={1.5} />,
+    title: 'Gestor dedicado',
+    description: 'Una sola persona atiende tu cuenta: pedidos, novedades y seguimiento en un solo canal.',
   },
   {
-    icon: '📅',
-    title: 'Programación Flexible',
-    description: 'Entregas semanales o mensuales según tu conveniencia y calendario empresarial.',
+    icon: <CalendarClock size={28} strokeWidth={1.5} />,
+    title: 'Frecuencia a tu medida',
+    description: 'Programamos entregas semanales, quincenales o mensuales según tu ritmo de consumo.',
   },
   {
-    icon: '🛡️',
-    title: 'Certificación INVIMA',
-    description: 'Garantía sanitaria completa con análisis microbiológicos regulares certificados.',
+    icon: <ShieldCheck size={28} strokeWidth={1.5} />,
+    title: 'Registro sanitario INVIMA',
+    description: 'Notificación sanitaria vigente y análisis microbiológicos periódicos verificables.',
   },
   {
-    icon: '🏢',
-    title: 'Soluciones a Escala',
-    description: 'Experiencia en abastecimiento a colegios, hospitales, empresas y construcciones.',
+    icon: <Building2 size={28} strokeWidth={1.5} />,
+    title: 'Operamos a cualquier escala',
+    description: 'Desde una oficina de 10 personas hasta un colegio de 800 estudiantes, nos adaptamos.',
   },
 ];
 
@@ -71,8 +73,8 @@ export const Benefits = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2>Beneficios de Trabajar con Nosotros</h2>
-          <p>Soluciones de hidratación empresarial diseñadas para garantizar calidad, eficiencia y confianza en cada entrega.</p>
+          <h2>Por qué empresas eligen delBosque</h2>
+          <p>Nos ocupamos del agua para que tu equipo se concentre en lo que importa. Así trabajamos:</p>
         </motion.div>
 
         <motion.div

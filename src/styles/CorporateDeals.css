@@ -47,9 +47,15 @@
 }
 
 .benefit-item__icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: rgba(10, 42, 82, 0.08);
+  color: #0A2A52;
+  margin: 0 auto 1rem;
 }
 
 .benefit-item h3 {

@@ -1,32 +1,34 @@
 import { motion } from 'framer-motion';
+import { Droplets, Package, ClipboardList, Landmark } from 'lucide-react';
+import type { ReactNode } from 'react';
 import '../styles/Products.css';
 
 interface Product {
-  icon: string;
+  icon: ReactNode;
   name: string;
   description: string;
 }
 
 const products: Product[] = [
   {
-    icon: '💧',
-    name: 'Botellones de Agua Purificada',
-    description: 'Garrafones de 20L en presentación retornable con agua purificada certificada.',
+    icon: <Droplets size={28} strokeWidth={1.5} />,
+    name: 'Botellón 20L retornable',
+    description: 'Agua purificada con registro INVIMA en garrafón reutilizable. Nuestro producto principal.',
   },
   {
-    icon: '💦',
-    name: 'Bolsas de Agua Potable',
-    description: 'Presentación práctica de bolsas para consumo inmediato en instituciones.',
+    icon: <Package size={28} strokeWidth={1.5} />,
+    name: 'Bolsas de agua',
+    description: 'Presentación individual para eventos, comedores y consumo rápido en instituciones.',
   },
   {
-    icon: '📋',
-    name: 'Planes Empresariales Mensuales',
-    description: 'Abastecimiento programado con facturación simplificada para tu empresa.',
+    icon: <ClipboardList size={28} strokeWidth={1.5} />,
+    name: 'Plan mensual programado',
+    description: 'Definimos cantidad, frecuencia y horario de entrega. Facturación consolidada a fin de mes.',
   },
   {
-    icon: '🏛️',
-    name: 'Abastecimiento Institucional',
-    description: 'Soluciones personalizadas para colegios, hospitales y organismos públicos.',
+    icon: <Landmark size={28} strokeWidth={1.5} />,
+    name: 'Abastecimiento institucional',
+    description: 'Operamos con colegios, hospitales y entidades que necesitan documentación y cumplimiento formal.',
   },
 ];
 
@@ -61,8 +63,8 @@ export const Products = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2>Nuestros Productos y Servicios</h2>
-          <p>Oferta completa de soluciones de hidratación profesional</p>
+          <h2>Qué ofrecemos</h2>
+          <p>Agua purificada en las presentaciones que tu operación necesita</p>
         </motion.div>
 
         <motion.div

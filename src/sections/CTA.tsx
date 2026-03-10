@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Phone, Briefcase, Award } from 'lucide-react';
 import '../styles/CTA.css';
 
 export const CTA = () => {
@@ -23,8 +24,8 @@ export const CTA = () => {
         viewport={{ once: true }}
       >
         <div className="cta__content">
-          <h2>Estamos Listos para Abastecer tu Empresa</h2>
-          <p>Nuestro equipo de profesionales está disponible para brindarte una solución personalizada según las necesidades de tu negocio o institución.</p>
+          <h2>Solicita tu primera entrega sin compromiso</h2>
+          <p>Escríbenos por WhatsApp o usa el formulario. Respondemos el mismo día con una propuesta ajustada a tu operación.</p>
 
           <motion.button
             className="btn-primary cta__button"
@@ -35,20 +36,23 @@ export const CTA = () => {
               target?.scrollIntoView({ behavior: 'smooth' });
             }}
           >
-            Obtener Cotización Empresarial
+            Solicitar cotización
           </motion.button>
 
           <div className="cta__info">
             <p>
-              <strong>📞 Pedidos:</strong> WhatsApp +57 300 123 4567
+              <Phone size={16} className="cta__inline-icon" />
+              <strong>Pedidos:</strong> WhatsApp +57 300 123 4567
             </p>
             <p>
-              <strong>💼 Cotizaciones Empresariales:</strong> Disponibles de lunes a viernes, 8 AM a 5 PM
+              <Briefcase size={16} className="cta__inline-icon" />
+              <strong>Convenios:</strong> Lunes a viernes, 8:00 AM a 5:00 PM
             </p>
           </div>
 
           <div className="cta__premium">
-            <p>⭐ Aliado estratégico en soluciones de hidratación empresarial</p>
+            <Award size={20} className="cta__inline-icon" />
+            <p>Proveedor certificado INVIMA de agua purificada</p>
           </div>
         </div>
       </motion.div>

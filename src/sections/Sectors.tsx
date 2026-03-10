@@ -1,42 +1,44 @@
 import { motion } from 'framer-motion';
+import { School, Stethoscope, Building2, Home, HardHat, ShoppingCart } from 'lucide-react';
+import type { ReactNode } from 'react';
 import '../styles/Sectors.css';
 
 interface SectorCard {
-  icon: string;
+  icon: ReactNode;
   name: string;
   description: string;
 }
 
 const sectors: SectorCard[] = [
   {
-    icon: '🏫',
-    name: 'Colegios e Instituciones Educativas',
-    description: 'Garantizamos hidratación segura para estudiantes y personal docente.',
+    icon: <School size={28} strokeWidth={1.5} />,
+    name: 'Colegios e instituciones educativas',
+    description: 'Dispensadores y botellones para zonas comunes, comedores y salas de profesores.',
   },
   {
-    icon: '🏥',
-    name: 'Clínicas y Hospitales',
-    description: 'Estándares sanitarios certificados para entornos médicos.',
+    icon: <Stethoscope size={28} strokeWidth={1.5} />,
+    name: 'Clínicas y centros médicos',
+    description: 'Cumplimos los requisitos documentales que exigen los entornos de salud.',
   },
   {
-    icon: '🏢',
-    name: 'Empresas y Oficinas',
-    description: 'Planes corporativos con logística eficiente y atención personalizada.',
+    icon: <Building2 size={28} strokeWidth={1.5} />,
+    name: 'Empresas y oficinas',
+    description: 'Entrega recurrente para equipos de trabajo, con facturación a nombre de la empresa.',
   },
   {
-    icon: '🏘️',
-    name: 'Conjuntos Residenciales',
-    description: 'Soluciones de abastecimiento para múltiples unidades residenciales.',
+    icon: <Home size={28} strokeWidth={1.5} />,
+    name: 'Conjuntos residenciales',
+    description: 'Abastecimiento coordinado con administración para múltiples torres o unidades.',
   },
   {
-    icon: '👷',
-    name: 'Constructoras',
-    description: 'Abastecimiento programado para obra y personal en construcción.',
+    icon: <HardHat size={28} strokeWidth={1.5} />,
+    name: 'Constructoras y obras',
+    description: 'Agua para campamentos y frentes de obra con entregas en sitio bajo cronograma.',
   },
   {
-    icon: '🛒',
-    name: 'Supermercados y Tiendas',
-    description: 'Entregas regulares para comercios minoristas y puntos de venta.',
+    icon: <ShoppingCart size={28} strokeWidth={1.5} />,
+    name: 'Comercios y tiendas',
+    description: 'Reposición periódica para reventa o consumo en punto de venta.',
   },
 ];
 
@@ -71,8 +73,8 @@ export const Sectors = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2>⭐ Sectores que Abastecemos</h2>
-          <p>Experiencia profesional en soluciones de hidratación para empresas e instituciones</p>
+          <h2>Sectores que abastecemos</h2>
+          <p>Trabajamos con empresas e instituciones que necesitan un proveedor confiable y documentado</p>
         </motion.div>
 
         <motion.div

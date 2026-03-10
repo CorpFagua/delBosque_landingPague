@@ -1,6 +1,5 @@
 .process {
-  padding: var(--spacing-3xl) var(--spacing-lg);
-  background: linear-gradient(180deg, #0a2448 0%, #081c38 50%, #061833 100%);
+  background: linear-gradient(180deg, #f1f6fb 0%, #ecf3fa 100%);
 }
 
 .process__header {
@@ -12,12 +11,12 @@
 }
 
 .process__header h2 {
-  color: var(--color-neutral-white);
+  color: var(--color-primary-deep);
   margin-bottom: var(--spacing-lg);
 }
 
 .process__header p {
-  color: var(--color-neutral-light-gray);
+  color: var(--color-neutral-base);
   font-size: var(--type-lead);
   line-height: 1.7;
 }
@@ -47,7 +46,7 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-primary-main) 0%, var(--color-primary-deep) 100%);
+  background: linear-gradient(135deg, var(--color-primary-main) 0%, var(--color-primary-light) 100%);
   color: white;
   display: flex;
   align-items: center;
@@ -60,33 +59,34 @@
 
 .step__content {
   flex: 1;
-  padding: var(--spacing-lg);
-  background: rgba(10, 36, 72, 0.85);
+  padding: calc(var(--spacing-lg) + 0.25rem);
+  background: var(--color-surface-card);
   border-radius: var(--radius-lg);
-  border-left: 4px solid var(--color-accent-cyan);
-  transition: all 0.3s ease;
+  border: 1px solid var(--color-neutral-darker);
+  transition: var(--transition-base);
+  box-shadow: var(--shadow-sm);
 }
 
 .step__content:hover {
-  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.35);
-  border-left-color: var(--color-primary-lighter);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
 }
 
 .step__content h3 {
-  color: var(--color-neutral-white);
+  color: var(--color-primary-deep);
   margin-bottom: var(--spacing-sm);
   font-size: var(--type-h4);
 }
 
 .step__description {
-  color: var(--color-accent-cyan);
+  color: var(--color-primary-main);
   font-weight: 600;
   margin-bottom: var(--spacing-md);
   font-size: var(--type-small);
 }
 
 .step__details {
-  color: var(--color-neutral-light-gray);
+  color: var(--color-neutral-base);
   font-size: var(--type-small);
   line-height: 1.6;
   margin: 0;
@@ -105,16 +105,10 @@
 .connector__line {
   width: 2px;
   height: 100%;
-  background: linear-gradient(180deg, var(--color-accent-cyan) 0%, var(--color-primary-lighter) 100%);
+  background: linear-gradient(180deg, rgba(63, 120, 181, 0.5) 0%, rgba(47, 95, 150, 0.1) 100%);
   transform-origin: top;
 }
-
-/* Responsive */
 @media (max-width: 768px) {
-  .process {
-    padding: var(--spacing-2xl) var(--spacing-md);
-  }
-
   .process__step {
     gap: var(--spacing-lg);
     margin-bottom: var(--spacing-2xl);

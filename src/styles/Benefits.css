@@ -44,9 +44,15 @@
 }
 
 .benefit-card__icon {
-  font-size: 3rem;
-  margin-bottom: var(--spacing-lg);
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: rgba(122, 168, 234, 0.15);
+  color: var(--color-primary-lighter);
+  margin: 0 auto var(--spacing-lg);
 }
 
 .benefit-card h3 {

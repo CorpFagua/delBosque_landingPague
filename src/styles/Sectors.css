@@ -36,7 +36,7 @@
   padding: 2rem;
   border: 2px solid #EAF1FF;
   transition: all 0.3s ease;
-  cursor: pointer;
+  cursor: default;
   text-align: center;
 }
 
@@ -46,9 +46,15 @@
 }
 
 .sector-card__icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: rgba(10, 42, 82, 0.08);
+  color: #0A2A52;
+  margin: 0 auto 1rem;
 }
 
 .sector-card h3 {

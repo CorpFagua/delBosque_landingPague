@@ -1,42 +1,6 @@
-# Agua Delbosque - robots.txt
-# Directrices para los bots de búsqueda
-
 User-agent: *
 Allow: /
-Allow: /src/
-Allow: /public/
-Allow: /*.css
-Allow: /*.js
-Allow: /*.tsx
-Allow: /*.ts
-
-# Desallow admin, config, privado
 Disallow: /admin/
-Disallow: /config/
 Disallow: /.env
-Disallow: /node_modules/
 
-# Sitemap
 Sitemap: https://aguadelbosque.com/sitemap.xml
-
-# Crawl-Delay
-Crawl-delay: 1
-
-# Specific user agents
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 0
-
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
-
-# Block bad bots
-User-agent: MJ12bot
-Disallow: /
-
-User-agent: AhrefsBot
-Disallow: /
-
-User-agent: SemrushBot
-Disallow: /

@@ -1,32 +1,34 @@
 import { motion } from 'framer-motion';
+import { Receipt, FileText, UserCheck, BarChart3 } from 'lucide-react';
+import type { ReactNode } from 'react';
 import '../styles/CorporateDeals.css';
 
 interface Deal {
-  icon: string;
+  icon: ReactNode;
   title: string;
   description: string;
 }
 
-const benefits: Deal[] = [
+const dealFeatures: Deal[] = [
   {
-    icon: '✈️',
-    title: 'Prioridad Logística',
-    description: 'Entregas programadas con máxima confiabilidad y puntualidad.',
+    icon: <Receipt size={28} strokeWidth={1.5} />,
+    title: 'Facturación electrónica',
+    description: 'Factura a nombre de tu empresa con soporte contable para tu área administrativa.',
   },
   {
-    icon: '💰',
-    title: 'Precios Especiales',
-    description: 'Descuentos por volumen según tus necesidades de abastecimiento.',
+    icon: <FileText size={28} strokeWidth={1.5} />,
+    title: 'Contrato con condiciones fijas',
+    description: 'Precio, volumen y frecuencia pactados formalmente. Sin sorpresas mes a mes.',
   },
   {
-    icon: '🤝',
-    title: 'Atención Personalizada',
-    description: 'Gestor dedicado para tu empresa disponible para consultas.',
+    icon: <UserCheck size={28} strokeWidth={1.5} />,
+    title: 'Ejecutivo de cuenta asignado',
+    description: 'Un responsable directo para coordinar pedidos, resolver novedades y dar seguimiento.',
   },
   {
-    icon: '📅',
-    title: 'Programación Flexible',
-    description: 'Entregas semanales o mensuales según tu conveniencia.',
+    icon: <BarChart3 size={28} strokeWidth={1.5} />,
+    title: 'Reportes de consumo',
+    description: 'Informe mensual con detalle de entregas por sede o área para tu control interno.',
   },
 ];
 
@@ -66,10 +68,10 @@ export const CorporateDeals = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2>💎 Convenios Empresariales</h2>
+          <h2>Convenios para empresas e instituciones</h2>
           <p>
-            Ofrecemos planes corporativos diseñados para empresas, colegios, hospitales y
-            conjuntos residenciales con entregas programadas y beneficios exclusivos.
+            Si tu empresa consume agua de forma recurrente, formalizamos un convenio con
+            condiciones claras, documentación en orden y un canal directo de atención.
           </p>
         </motion.div>
 
@@ -80,11 +82,11 @@ export const CorporateDeals = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {benefits.map((benefit, index) => (
+          {dealFeatures.map((feature, index) => (
             <motion.div key={index} className="benefit-item" variants={cardVariants}>
-              <div className="benefit-item__icon">{benefit.icon}</div>
-              <h3>{benefit.title}</h3>
-              <p>{benefit.description}</p>
+              <div className="benefit-item__icon">{feature.icon}</div>
+              <h3>{feature.title}</h3>
+              <p>{feature.description}</p>
             </motion.div>
           ))}
         </motion.div>

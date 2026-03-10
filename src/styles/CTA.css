@@ -75,6 +75,10 @@
   margin: var(--spacing-md) 0;
   font-size: var(--type-small);
   opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .cta__info p:last-child {
@@ -92,7 +96,14 @@
   font-size: 1.25rem;
   font-weight: 600;
   letter-spacing: 0.5px;
-  animation: pulse 2s ease-in-out infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.cta__inline-icon {
+  flex-shrink: 0;
 }
 
 .cta__premium p {

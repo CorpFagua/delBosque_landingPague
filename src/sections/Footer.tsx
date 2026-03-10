@@ -1,3 +1,4 @@
+import { Facebook, Instagram, MessageCircle } from 'lucide-react';
 import '../styles/Footer.css';
 
 export const Footer = () => {
@@ -11,14 +12,14 @@ export const Footer = () => {
             <h4>delbosque</h4>
             <p>Agua purificada de calidad premium con certificaciones INVIMA para tu confianza.</p>
             <div className="footer__socials">
-              <a href="#" aria-label="Facebook">
-                f
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <Facebook size={18} />
               </a>
-              <a href="#" aria-label="Instagram">
-                📷
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <Instagram size={18} />
               </a>
-              <a href="#" aria-label="WhatsApp">
-                💬
+              <a href="https://wa.me/573001234567" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <MessageCircle size={18} />
               </a>
             </div>
           </div>
@@ -27,16 +28,16 @@ export const Footer = () => {
             <h4>Empresa</h4>
             <ul>
               <li>
-                <a href="#Benefits">Acerca de nosotros</a>
+                <a href="#Benefits">Beneficios</a>
               </li>
               <li>
                 <a href="#Process">Nuestro proceso</a>
               </li>
               <li>
-                <a href="#">Blog</a>
+                <a href="#Products">Productos</a>
               </li>
               <li>
-                <a href="#">Contacto</a>
+                <a href="#ContactForm">Contacto</a>
               </li>
             </ul>
           </div>

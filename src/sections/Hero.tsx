@@ -51,15 +51,15 @@ export const Hero = () => {
           animate="visible"
         >
           <motion.div variants={itemVariants} className="hero__badge">
-            <span>Soluciones Empresariales Certificadas</span>
+            <span>Registro Sanitario INVIMA · Cota, Cundinamarca</span>
           </motion.div>
 
           <motion.h1 variants={itemVariants} className="hero__title">
-            Hidratación Profesional para tu Empresa
+            Agua purificada para operaciones que no pueden parar
           </motion.h1>
 
           <motion.p variants={itemVariants} className="hero__subtitle">
-            En Agua Delbosque trabajamos con estándares profesionales de purificación y logística eficiente para abastecer empresas, colegios, clínicas y construcciones.
+            Botellones de 20L con entrega programada a colegios, clínicas, oficinas y obras en Cota y Sabana de Bogotá. Facturación empresarial y gestor dedicado.
           </motion.p>
 
           <motion.div variants={itemVariants} className="hero__cta-group">
@@ -72,7 +72,7 @@ export const Hero = () => {
                 target?.scrollIntoView({ behavior: 'smooth' });
               }}
             >
-              Solicitar Información
+              Solicitar cotización
             </motion.button>
 
             <motion.a

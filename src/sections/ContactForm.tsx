@@ -2,12 +2,15 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import '../styles/ContactForm.css';
 
+// TODO: Reemplazar con el número real del negocio (solo dígitos, con código de país)
+const BUSINESS_WHATSAPP = '573001234567';
+
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     company: '',
     address: '',
-    whatsapp: '',
+    phone: '',
   });
 
   const [submitted, setSubmitted] = useState(false);
@@ -26,7 +29,7 @@ export const ContactForm = () => {
     setLoading(true);
 
     // Validación básica
-    if (!formData.name || !formData.company || !formData.whatsapp) {
+    if (!formData.name || !formData.company || !formData.phone) {
       alert('Por favor completa los campos requeridos');
       setLoading(false);
       return;
@@ -37,13 +40,12 @@ export const ContactForm = () => {
       setSubmitted(true);
       setLoading(false);
 
-      // Redirigir a WhatsApp con mensaje
-      const message = `Hola delbosque, soy ${formData.name} de ${formData.company}. Ubicación: ${formData.address}. Me interesa solicitar una cotización empresarial.`;
-      const whatsappLink = `https://wa.me/${formData.whatsapp}?text=${encodeURIComponent(message)}`;
+      const message = `Hola, soy ${formData.name} de ${formData.company}. Dirección de entrega: ${formData.address || 'Por confirmar'}. Mi teléfono: ${formData.phone}. Quisiera cotizar abastecimiento de agua.`;
+      const whatsappLink = `https://wa.me/${BUSINESS_WHATSAPP}?text=${encodeURIComponent(message)}`;
       window.open(whatsappLink, '_blank');
 
       // Resetear formulario
-      setFormData({ name: '', company: '', address: '', whatsapp: '' });
+      setFormData({ name: '', company: '', address: '', phone: '' });
       setTimeout(() => setSubmitted(false), 3000);
     }, 1000);
   };
@@ -68,56 +70,56 @@ export const ContactForm = () => {
           viewport={{ once: true }}
         >
           <div className="contact-form__header">
-            <h2>📲 Solicitar Cotización</h2>
-            <p>Completa este formulario y nuestro equipo te contactará con una propuesta personalizada.</p>
+            <h2>Solicitar cotización</h2>
+            <p>Déjanos tus datos y te contactamos con una propuesta ajustada a tu empresa.</p>
           </div>
 
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-group">
-              <label htmlFor="name">Nombre *</label>
+              <label htmlFor="name">Nombre completo *</label>
               <input
                 type="text"
                 id="name"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="Tu nombre"
+                placeholder="Ej: Carlos Ramírez"
                 required
               />
             </div>
 
             <div className="form-group">
-              <label htmlFor="company">Empresa *</label>
+              <label htmlFor="company">Empresa o institución *</label>
               <input
                 type="text"
                 id="company"
                 name="company"
                 value={formData.company}
                 onChange={handleChange}
-                placeholder="Nombre de tu empresa"
+                placeholder="Ej: Colegio San Martín"
                 required
               />
             </div>
 
             <div className="form-group">
-              <label htmlFor="address">Dirección</label>
+              <label htmlFor="address">Dirección de entrega</label>
               <input
                 type="text"
                 id="address"
                 name="address"
                 value={formData.address}
                 onChange={handleChange}
-                placeholder="Dirección de entrega"
+                placeholder="Ej: Cra 5 #12-30, Cota"
               />
             </div>
 
             <div className="form-group">
-              <label htmlFor="whatsapp">WhatsApp *</label>
+              <label htmlFor="phone">Teléfono de contacto *</label>
               <input
                 type="tel"
-                id="whatsapp"
-                name="whatsapp"
-                value={formData.whatsapp}
+                id="phone"
+                name="phone"
+                value={formData.phone}
                 onChange={handleChange}
                 placeholder="+57 300 1234567"
                 required
