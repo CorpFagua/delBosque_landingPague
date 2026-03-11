@@ -59,7 +59,7 @@ export const CorporateDeals = () => {
   };
 
   return (
-    <section className="corporate-deals" id="CorporateDeals">
+    <section className="corporate-deals" id="CorporateDeals" data-header-scheme="on-light">
       <div className="container">
         <motion.div
           className="corporate-deals__header"

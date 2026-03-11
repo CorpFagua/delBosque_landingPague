@@ -54,7 +54,7 @@ export const Products = () => {
   };
 
   return (
-    <section className="products" id="Products">
+    <section className="products" id="Products" data-header-scheme="on-light">
       <div className="container">
         <motion.div
           className="products__header"

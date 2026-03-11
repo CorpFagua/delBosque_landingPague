@@ -11,14 +11,14 @@
 
 .corporate-deals__header h2 {
   font-size: clamp(2rem, 4.2vw, 3.1rem);
-  color: #0A2A52;
+  color: #060E2A;
   margin-bottom: 1rem;
   font-weight: 700;
 }
 
 .corporate-deals__header p {
   font-size: 1.125rem;
-  color: #8EA6CC;
+  color: #6490C8;
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.7;

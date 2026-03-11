@@ -60,7 +60,7 @@ export const ContactForm = () => {
   };
 
   return (
-    <section className="contact-form-section" id="ContactForm">
+    <section className="contact-form-section" id="ContactForm" data-header-scheme="on-light">
       <div className="container">
         <motion.div
           className="contact-form-wrapper"

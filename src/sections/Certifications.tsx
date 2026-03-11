@@ -52,7 +52,7 @@ export const Certifications = () => {
   };
 
   return (
-    <section className="certifications">
+    <section className="certifications" data-header-scheme="on-dark">
       <div className="container">
         <motion.div
           className="certifications__header"

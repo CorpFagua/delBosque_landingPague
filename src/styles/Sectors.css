@@ -1,6 +1,6 @@
 .sectors {
   padding: 5rem 0;
-  background: linear-gradient(135deg, #DBE8FF 0%, #F8FBFF 100%);
+  background: linear-gradient(160deg, #EBF2FE 0%, #F5F9FF 100%);
   position: relative;
 }
 
@@ -11,14 +11,14 @@
 
 .sectors__header h2 {
   font-size: clamp(2rem, 4.2vw, 3.1rem);
-  color: #0A2A52;
+  color: #060E2A;
   margin-bottom: 1rem;
   font-weight: 700;
 }
 
 .sectors__header p {
   font-size: 1.125rem;
-  color: #8EA6CC;
+  color: #6490C8;
   max-width: 600px;
   margin: 0 auto;
 }

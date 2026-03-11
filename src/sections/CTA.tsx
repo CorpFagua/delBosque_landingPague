@@ -13,7 +13,7 @@ export const CTA = () => {
   };
 
   return (
-    <section className="cta">
+    <section className="cta" data-header-scheme="on-dark">
       <div className="cta__background" />
 
       <motion.div

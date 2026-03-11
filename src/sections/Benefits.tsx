@@ -64,7 +64,7 @@ export const Benefits = () => {
   };
 
   return (
-    <section className="benefits" id="Benefits">
+    <section className="benefits" id="Benefits" data-header-scheme="on-dark">
       <div className="container">
         <motion.div
           className="benefits__header"

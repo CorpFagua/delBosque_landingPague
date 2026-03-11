@@ -64,7 +64,7 @@ export const Sectors = () => {
   };
 
   return (
-    <section className="sectors" id="Sectors">
+    <section className="sectors" id="Sectors" data-header-scheme="on-light">
       <div className="container">
         <motion.div
           className="sectors__header"

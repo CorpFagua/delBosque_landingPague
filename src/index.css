@@ -1,22 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  /* Colores corporativos */
-  --color-primary-deep: #061833;
-  --color-primary-main: #0a2a52;
-  --color-primary-light: #1a447b;
-  --color-primary-lighter: #dbe8ff;
-  --color-brand-blue: #0052cc;
+  /* Colores corporativos — familia azul cobalto de marca */
+  --color-primary-deep:    #060E2A;  /* Navy profundo — fondos dark */
+  --color-primary-main:    #0D1F6A;  /* Azul navy — secciones oscuras */
+  --color-primary-light:   #1A3A9A;  /* Azul medio */
+  --color-primary-lighter: #E8F0FE;  /* Azul pálido — fondos claros */
+  --color-brand-blue:      #1243CC;  /* Azul cobalto — primario de marca */
 
-  --color-accent-teal: #3d77bf;
-  --color-accent-cyan: #7aa8ea;
+  --color-accent-teal:  #2C5FC0;  /* Azul de soporte */
+  --color-accent-cyan:  #93C5FD;  /* Azul claro decorativo */
 
-  --color-neutral-white: #F8FBFF;
-  --color-neutral-light-gray: #D6E0F2;
-  --color-neutral-gray: #8EA6CC;
-  --color-neutral-dark-gray: #B5C6E2;
-  --color-neutral-charcoal: #EAF1FF;
-  --color-neutral-black: #050F20;
+  --color-neutral-white:      #F5F9FF;
+  --color-neutral-light-gray: #C8DCF8;
+  --color-neutral-gray:       #6490C8;
+  --color-neutral-dark-gray:  #A0BCDC;
+  --color-neutral-charcoal:   #E0EFFF;
+  --color-neutral-black:      #040C1E;
 
   --color-success: #10B981;
   --color-warning: #F59E0B;

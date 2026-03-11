@@ -63,7 +63,7 @@ export const Process = () => {
   };
 
   return (
-    <section className="process">
+    <section className="process" data-header-scheme="on-light">
       <div className="container">
         <motion.div
           className="process__header"
