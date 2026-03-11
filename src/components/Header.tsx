@@ -1,22 +1,25 @@
-import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import '../styles/Header.css';
 import logoNegro from '../assets/logo-negro.png';
-import logoBlanco from '../assets/logo-blanco.png';
 
 export const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLightMode, setIsLightMode] = useState(true);
+  const [hidden, setHidden] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      // Activar modo light mientras estés en el primer 60vh (Hero)
-      setIsLightMode(window.scrollY < window.innerHeight * 0.6);
+      const currentScrollY = window.scrollY;
+      const scrollDirection = currentScrollY > lastScrollY ? 'down' : 'up';
+      
+      // Ocultar/mostrar header según dirección de scroll
+      setHidden(scrollDirection === 'down' && currentScrollY > 100);
+      
+      setLastScrollY(currentScrollY);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   const navItems = [
     { label: 'Inicio', href: '#' },
@@ -27,61 +30,29 @@ export const Header = () => {
   ];
 
   return (
-    <header className={`header ${isLightMode ? 'header--light' : ''}`}>
-      <div className="container">
-        <div className="header__content">
-          <div className="header__logo">
-            <motion.a
-              href="#"
-              className="logo"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            >
-              <img 
-                src={isLightMode ? logoBlanco : logoNegro}
-                alt="delBosque - Agua Purificada Certificada INVIMA Cota Cundinamarca"
-                className="logo__image"
-              />
-            </motion.a>
-          </div>
+    <header className={`header ${hidden ? 'hidden' : ''}`}>
+      <a href="#" className="header-logo-link">
+        <img 
+          src={logoNegro}
+          alt="delBosque - Agua Purificada"
+          className="header-logo"
+        />
+      </a>
 
-          <nav className={`header__nav ${isMenuOpen ? 'active' : ''}`}>
-            {navItems.map((item, index) => (
-              <motion.a
-                key={index}
-                href={item.href}
-                className="nav-link"
-                whileHover={{ color: '#0052CC' }}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.label}
-              </motion.a>
-            ))}
-          </nav>
-
-          <motion.button
-            className="header__cta"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-            onClick={() => {
-              const target = document.getElementById('ContactForm');
-              target?.scrollIntoView({ behavior: 'smooth' });
-            }}
+      <nav className="header-nav">
+        {navItems.map((item, index) => (
+          <a
+            key={index}
+            href={item.href}
           >
-            Cotización
-          </motion.button>
+            {item.label}
+          </a>
+        ))}
+      </nav>
 
-          <button
-            className={`header__menu-toggle ${isMenuOpen ? 'active' : ''}`}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            <span />
-            <span />
-            <span />
-          </button>
-        </div>
-      </div>
+      <a href="#ContactForm" className="header-cta">
+        Cotización
+      </a>
     </header>
   );
 };

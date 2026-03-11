@@ -2,18 +2,119 @@
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  z-index: 100;
-  background: rgba(6, 24, 51, 0.72);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(122, 168, 234, 0.25);
-  padding: var(--spacing-lg) 0;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 80px;
+  background-color: transparent;
+  z-index: 1000;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: auto;
 }
 
-.header--light {
-  background: rgba(6, 24, 51, 0.38);
-  border-bottom-color: rgba(219, 232, 255, 0.22);
+.header.hidden {
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+.header-logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.header-logo {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.header-nav {
+  display: flex;
+  gap: 50px;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-nav a {
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  letter-spacing: 0.2px;
+}
+
+.header-nav a:hover {
+  color: #0052cc;
+}
+
+.header-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: #0052cc;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 1px;
+}
+
+.header-nav a:hover::after {
+  width: 100%;
+}
+
+.header-cta {
+  padding: 11px 28px;
+  border-radius: 25px;
+  border: 2px solid #0052cc;
+  background-color: transparent;
+  color: #0052cc;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.3px;
+}
+
+.header-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 82, 204, 0.1);
+  transition: left 0.3s ease;
+  z-index: 0;
+}
+
+.header-cta:hover::before {
+  left: 100%;
+}
+
+.header-cta:hover {
+  background-color: #0052cc;
+  color: white;
+  box-shadow: 0 8px 24px rgba(0, 82, 204, 0.3);
 }
 
 .header__content {
