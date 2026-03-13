@@ -1,44 +1,42 @@
 import { motion } from 'framer-motion';
-import { School, Stethoscope, Building2, Home, HardHat, ShoppingCart } from 'lucide-react';
-import type { ReactNode } from 'react';
 import '../styles/Sectors.css';
 
 interface SectorCard {
-  icon: ReactNode;
   name: string;
   description: string;
+  image: string;
 }
 
 const sectors: SectorCard[] = [
   {
-    icon: <School size={28} strokeWidth={1.5} />,
     name: 'Colegios e instituciones educativas',
     description: 'Dispensadores y botellones para zonas comunes, comedores y salas de profesores.',
+    image: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&q=80',
   },
   {
-    icon: <Stethoscope size={28} strokeWidth={1.5} />,
     name: 'Clínicas y centros médicos',
     description: 'Cumplimos los requisitos documentales que exigen los entornos de salud.',
+    image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=80',
   },
   {
-    icon: <Building2 size={28} strokeWidth={1.5} />,
     name: 'Empresas y oficinas',
     description: 'Entrega recurrente para equipos de trabajo, con facturación a nombre de la empresa.',
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80',
   },
   {
-    icon: <Home size={28} strokeWidth={1.5} />,
     name: 'Conjuntos residenciales',
     description: 'Abastecimiento coordinado con administración para múltiples torres o unidades.',
+    image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=80',
   },
   {
-    icon: <HardHat size={28} strokeWidth={1.5} />,
     name: 'Constructoras y obras',
     description: 'Agua para campamentos y frentes de obra con entregas en sitio bajo cronograma.',
+    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80',
   },
   {
-    icon: <ShoppingCart size={28} strokeWidth={1.5} />,
     name: 'Comercios y tiendas',
     description: 'Reposición periódica para reventa o consumo en punto de venta.',
+    image: 'https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=600&q=80',
   },
 ];
 
@@ -47,24 +45,17 @@ export const Sectors = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
+      transition: { staggerChildren: 0.1, delayChildren: 0.15 },
     },
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6 },
-    },
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
 
   return (
-    <section className="sectors" id="Sectors" data-header-scheme="on-light">
+    <section className="sectors" id="Sectors" data-header-scheme="on-dark">
       <div className="container">
         <motion.div
           className="sectors__header"
@@ -74,7 +65,7 @@ export const Sectors = () => {
           viewport={{ once: true }}
         >
           <h2>Sectores que abastecemos</h2>
-          <p>Trabajamos con empresas e instituciones que necesitan un proveedor confiable y documentado</p>
+          <p>Trabajamos con empresas e instituciones que necesitan un proveedor confiable y documentado.</p>
         </motion.div>
 
         <motion.div
@@ -89,14 +80,13 @@ export const Sectors = () => {
               key={index}
               className="sector-card"
               variants={cardVariants}
-              whileHover={{
-                y: -8,
-                boxShadow: '0 20px 40px rgba(10, 42, 82, 0.15)',
-              }}
+              style={{ backgroundImage: `url(${sector.image})` }}
             >
-              <div className="sector-card__icon">{sector.icon}</div>
-              <h3>{sector.name}</h3>
-              <p>{sector.description}</p>
+              <div className="sector-card__overlay" />
+              <div className="sector-card__content">
+                <h3>{sector.name}</h3>
+                <p>{sector.description}</p>
+              </div>
             </motion.div>
           ))}
         </motion.div>

@@ -62,17 +62,32 @@ export const ContactForm = () => {
   return (
     <section className="contact-form-section" id="ContactForm" data-header-scheme="on-light">
       <div className="container">
-        <motion.div
-          className="contact-form-wrapper"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          <div className="contact-form__header">
-            <h2>Solicitar cotización</h2>
-            <p>Déjanos tus datos y te contactamos con una propuesta ajustada a tu empresa.</p>
-          </div>
+        <div className="contact-form__split">
+          <motion.div
+            className="contact-form__image-col"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <img
+              src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&q=80"
+              alt="Agua cristalina de montaña"
+              className="contact-form__photo"
+            />
+          </motion.div>
+
+          <motion.div
+            className="contact-form-wrapper"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <div className="contact-form__header">
+              <h2>Solicitar cotización</h2>
+              <p>Déjanos tus datos y te contactamos con una propuesta ajustada a tu empresa.</p>
+            </div>
 
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-group">
@@ -143,11 +158,12 @@ export const ContactForm = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
               >
-                ✓ Formulario enviado exitosamente. Te redirigiremos a WhatsApp.
+                Formulario enviado exitosamente. Te redirigiremos a WhatsApp.
               </motion.div>
             )}
           </form>
         </motion.div>
+        </div>
       </div>
     </section>
   );

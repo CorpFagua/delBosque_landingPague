@@ -7,7 +7,7 @@
 .cta__background {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #060E2A 0%, #0D1F6A 55%, #1243CC 100%);
+  background: linear-gradient(135deg, var(--color-primary-deep) 0%, var(--color-primary-main) 55%, var(--color-brand-blue) 100%);
   z-index: 1;
 }
 
@@ -49,11 +49,11 @@
   font-size: 1.125rem;
   font-weight: 600;
   border: none;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-full);
   background: white;
   color: var(--color-primary-deep);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: var(--transition-base);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   margin-bottom: var(--spacing-2xl);
 }

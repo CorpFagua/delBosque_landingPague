@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  /* Colores corporativos — familia azul cobalto de marca */
-  --color-primary-deep:    #060E2A;  /* Navy profundo — fondos dark */
-  --color-primary-main:    #0D1F6A;  /* Azul navy — secciones oscuras */
-  --color-primary-light:   #1A3A9A;  /* Azul medio */
-  --color-primary-lighter: #E8F0FE;  /* Azul pálido — fondos claros */
-  --color-brand-blue:      #1243CC;  /* Azul cobalto — primario de marca */
+  /* ─── Paleta corporativa unificada ──────────────────────────────────── */
+  --color-primary-deep:    #060E2A;
+  --color-primary-main:    #0D1F6A;
+  --color-primary-light:   #1A3A9A;
+  --color-primary-lighter: #E8F0FE;
+  --color-brand-blue:      #1243CC;
 
-  --color-accent-teal:  #2C5FC0;  /* Azul de soporte */
-  --color-accent-cyan:  #93C5FD;  /* Azul claro decorativo */
+  --color-accent-teal:  #2C5FC0;
+  --color-accent-cyan:  #93C5FD;
 
   --color-neutral-white:      #F5F9FF;
   --color-neutral-light-gray: #C8DCF8;
@@ -18,17 +18,26 @@
   --color-neutral-charcoal:   #E0EFFF;
   --color-neutral-black:      #040C1E;
 
+  /* Superficies — usadas en cards y fondos claros */
+  --color-surface-card:    #FFFFFF;
+  --color-surface-light:   #F5F9FF;
+  --color-surface-subtle:  #EBF2FE;
+  --color-neutral-base:    #5A7DA8;
+  --color-neutral-darker:  #D6E0F2;
+  --color-text-dark:       #060E2A;
+  --color-text-body:       #3A5578;
+
   --color-success: #10B981;
   --color-warning: #F59E0B;
-  --color-error: #EF4444;
+  --color-error:   #EF4444;
 
-  /* Tipografía */
+  /* ─── Tipografía ────────────────────────────────────────────────────── */
   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     'Helvetica Neue', sans-serif;
-  --font-secondary: 'Inter', 'Times New Roman', serif;
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
   --font-mono: 'Fira Code', 'Courier New', monospace;
 
-  /* Escala tipografica */
+  /* Escala tipográfica */
   --type-hero: clamp(2.9rem, 6.8vw, 4.6rem);
   --type-h1: clamp(2.4rem, 5.2vw, 3.8rem);
   --type-h2: clamp(2rem, 4.2vw, 3.1rem);
@@ -47,6 +56,7 @@
   --spacing-xl: 2rem;
   --spacing-2xl: 3rem;
   --spacing-3xl: 4rem;
+  --spacing-4xl: 6rem;
 
   /* Sombras */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -60,7 +70,12 @@
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
   --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
   --radius-full: 9999px;
+
+  /* Transiciones */
+  --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: all 0.15s ease;
 
   font-family: var(--font-primary);
   line-height: 1.6;
@@ -88,13 +103,27 @@ body {
   font-family: var(--font-primary);
   font-size: 16px;
   line-height: 1.6;
-  color: #1a1a1a;
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: linear-gradient(180deg, #050f20 0%, #071a34 100%);
+  color: var(--color-text-body);
 }
 
-h1, h2, h3, h4, h5, h6 {
+/* ─── Headings globales — Fraunces display ─────────────────────────── */
+h1, h2, h3 {
+  font-family: var(--font-display);
   font-weight: 700;
-  line-height: 1.2;
-  color: #0d0d0d;
+  font-variation-settings: 'opsz' 72, 'SOFT' 0, 'WONK' 0;
+  line-height: 1.15;
+  color: var(--color-text-dark);
+}
+
+h4, h5, h6 {
+  font-family: var(--font-primary);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--color-text-dark);
 }
 
 a {
@@ -107,48 +136,6 @@ button, [role="button"] {
   font-family: inherit;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  overflow-x: hidden;
-  background: linear-gradient(180deg, #050f20 0%, #071a34 100%);
-  color: var(--color-neutral-charcoal);
-}
-
-/* Tipografía */
-h1 {
-  font-family: var(--font-secondary);
-  font-size: var(--type-h1);
-  font-weight: 700;
-  line-height: 1.05;
-  letter-spacing: -0.015em;
-}
-
-h2 {
-  font-family: var(--font-secondary);
-  font-size: var(--type-h2);
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-}
-
-h3 {
-  font-family: var(--font-secondary);
-  font-size: var(--type-h3);
-  font-weight: 600;
-  line-height: 1.3;
-}
-
-h4 {
-  font-family: var(--font-secondary);
-  font-size: var(--type-h4);
-  font-weight: 600;
-  line-height: 1.4;
-}
 
 p {
   font-size: var(--type-body);
@@ -160,16 +147,7 @@ small {
   line-height: 1.5;
 }
 
-/* Enlaces */
-a {
-  color: var(--color-primary-main);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
 
-a:hover {
-  color: var(--color-primary-deep);
-}
 
 /* Botones */
 button {
