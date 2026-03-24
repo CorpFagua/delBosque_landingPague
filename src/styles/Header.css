@@ -221,11 +221,118 @@
   font-size: var(--type-small);
 }
 
+.header__cta {
+  flex-shrink: 0;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: linear-gradient(135deg, #1a447b 0%, #0a2a52 100%);
+  color: white;
+  border: none;
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: var(--type-small);
+}
+
 .header--light .header__cta {
   background: rgba(255, 255, 255, 0.14);
   color: var(--color-neutral-white);
   border: 1px solid rgba(219, 232, 255, 0.35);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+/* ─── Hamburger ────────────────────────────────────────────────────── */
+
+.header-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  color: white;
+  z-index: 1010;
+  line-height: 0;
+  transition: color 0.3s ease;
+}
+
+.header.on-light .header-hamburger {
+  color: #1a1a1a;
+}
+
+/* ─── Mobile menu overlay ──────────────────────────────────────────── */
+
+.header-mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 14, 42, 0.97);
+  backdrop-filter: blur(14px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.header-mobile-menu.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.header-mobile-menu a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-family: var(--font-display);
+  font-variation-settings: 'opsz' 72, 'SOFT' 0, 'WONK' 0;
+  letter-spacing: -0.01em;
+  transition: color 0.2s ease;
+}
+
+.header-mobile-menu a:hover {
+  color: var(--color-accent-cyan);
+}
+
+.header-mobile-cta {
+  margin-top: 0.5rem;
+  padding: 14px 40px !important;
+  border-radius: 50px !important;
+  background: var(--color-brand-blue) !important;
+  color: white !important;
+  font-size: 1rem !important;
+  font-family: var(--font-primary) !important;
+  font-variation-settings: normal !important;
+  box-shadow: 0 8px 28px rgba(18, 67, 204, 0.35);
+}
+
+/* ─── Responsive ───────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .header {
+    padding: 16px 24px;
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  .header-cta {
+    display: none;
+  }
+
+  .header-hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header-mobile-menu {
+    display: flex;
+  }
 }
 
 .header__cta:hover {

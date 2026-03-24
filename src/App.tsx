@@ -1,9 +1,10 @@
 import { Header } from './components/Header';
+import { WhatsAppFloat } from './components/WhatsAppFloat';
 import { Hero } from './sections/Hero';
 import { Benefits } from './sections/Benefits';
 import { Products } from './sections/Products';
 import { ImageBreak } from './sections/ImageBreak';
-import { Process } from './sections/Process';
+import { Process } from './sections/Process_distribuidor';
 import { Sectors } from './sections/Sectors';
 import { CorporateDeals } from './sections/CorporateDeals';
 //import { Testimonials } from './sections/Testimonials';
@@ -29,6 +30,7 @@ function App() {
       <ContactForm />
       <CTA />
       <Footer />
+      <WhatsAppFloat />
     </>
   );
 }

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import '../styles/ContactForm.css';
+import contactImage from '../assets/bosque.png';
 
 // TODO: Reemplazar con el número real del negocio (solo dígitos, con código de país)
 const BUSINESS_WHATSAPP = '573001234567';
@@ -71,7 +72,7 @@ export const ContactForm = () => {
             viewport={{ once: true }}
           >
             <img
-              src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&q=80"
+              src={contactImage}
               alt="Agua cristalina de montaña"
               className="contact-form__photo"
             />

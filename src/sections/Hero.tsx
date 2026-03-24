@@ -21,7 +21,7 @@ export const Hero = () => {
             <span className="hero-title-line2">para tu empresa</span>
           </h1>
           <p className="hero-subtitle">
-            Botellones de 20L con entrega programada a colegios, clínicas,
+            Botellones con entrega programada a colegios, clínicas,
             oficinas y obras. Facturación empresarial y gestor dedicado.
           </p>
           <a href="#ContactForm" className="hero-cta">

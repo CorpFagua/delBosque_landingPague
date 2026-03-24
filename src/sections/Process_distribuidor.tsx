@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Droplet, Filter, Atom, FlaskConical, Sparkles } from 'lucide-react';
+import { FileText, PhoneCall, Handshake, Truck, BadgeCheck } from 'lucide-react';
 import type { ReactNode } from 'react';
 import '../styles/Process.css';
 
@@ -13,33 +13,33 @@ interface ProcessStep {
 const steps: ProcessStep[] = [
   {
     number: 1,
-    icon: <Droplet size={22} strokeWidth={1.5} />,
-    title: 'Captación',
-    description: 'Agua de fuentes naturales verificadas y autorizadas por autoridades sanitarias.',
+    icon: <PhoneCall size={22} strokeWidth={1.5} />,
+    title: 'Contáctanos',
+    description: 'Escríbenos por WhatsApp o formulario indicando tu zona y capacidad de distribución.',
   },
   {
     number: 2,
-    icon: <Filter size={22} strokeWidth={1.5} />,
-    title: 'Pre-filtración',
-    description: 'Filtros de sedimento de 20 y 5 micras para remover partículas grandes.',
+    icon: <FileText size={22} strokeWidth={1.5} />,
+    title: 'Evaluación',
+    description: 'Revisamos tu perfil, zona de cobertura y validamos requisitos comerciales básicos.',
   },
   {
     number: 3,
-    icon: <Atom size={22} strokeWidth={1.5} />,
-    title: 'Carbón activo',
-    description: 'Carbón activado granular que elimina cloro, sabor, olor y contaminantes orgánicos.',
+    icon: <Handshake size={22} strokeWidth={1.5} />,
+    title: 'Acuerdo comercial',
+    description: 'Firmamos convenio con condiciones preferenciales, precios de distribuidor y territorio exclusivo.',
   },
   {
     number: 4,
-    icon: <FlaskConical size={22} strokeWidth={1.5} />,
-    title: 'Ósmosis inversa',
-    description: 'Membrana que elimina bacterias, virus y sales disueltas al 99.9%.',
+    icon: <Truck size={22} strokeWidth={1.5} />,
+    title: 'Capacitación y entrega',
+    description: 'Te entregamos inventario inicial, material de marca y capacitación sobre el producto.',
   },
   {
     number: 5,
-    icon: <Sparkles size={22} strokeWidth={1.5} />,
-    title: 'Post-filtración',
-    description: 'Añadimos minerales esenciales y equilibramos el pH para agua premium.',
+    icon: <BadgeCheck size={22} strokeWidth={1.5} />,
+    title: 'Distribuidor activo',
+    description: 'Comienzas a vender con soporte continuo, reposición ágil y acompañamiento comercial.',
   },
 ];
 
@@ -67,8 +67,8 @@ export const Process = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2>Nuestro proceso de purificación</h2>
-          <p>5 etapas de filtración rigurosas para garantizar agua de máxima pureza.</p>
+          <h2>Conviértete en distribuidor autorizado</h2>
+          <p>En 5 pasos comienzas a distribuir agua delBosque en tu zona con respaldo total.</p>
         </motion.div>
 
         <motion.div

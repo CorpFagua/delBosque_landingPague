@@ -13,7 +13,7 @@ interface Product {
 const products: Product[] = [
   {
     icon: <Droplets size={24} strokeWidth={1.5} />,
-    name: 'Botellón 20L retornable',
+    name: 'Botellón retornable',
     description: 'Agua purificada con registro INVIMA en garrafón reutilizable. Nuestro producto principal.',
   },
   {

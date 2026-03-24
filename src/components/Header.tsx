@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Menu, X } from 'lucide-react';
 import '../styles/Header.css';
 import logoNegro from '../assets/logo-negro.png';
 import logoBlanco from '../assets/logo-blanco.png';
@@ -8,6 +9,7 @@ type HeaderScheme = 'on-dark' | 'on-light';
 export const Header = () => {
   const [hidden, setHidden] = useState(false);
   const [scheme, setScheme] = useState<HeaderScheme>('on-dark');
+  const [menuOpen, setMenuOpen] = useState(false);
   const lastScrollY = useRef(0);
 
   useEffect(() => {
@@ -36,6 +38,17 @@ export const Header = () => {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => { if (window.innerWidth > 768) setMenuOpen(false); };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [menuOpen]);
+
   const navItems = [
     { label: 'Inicio', href: '#' },
     { label: 'Beneficios', href: '#Benefits' },
@@ -43,6 +56,8 @@ export const Header = () => {
     { label: 'Convenios', href: '#CorporateDeals' },
     { label: 'Productos', href: '#Products' },
   ];
+
+  const handleNavClick = () => setMenuOpen(false);
 
   return (
     <header className={`header ${hidden ? 'hidden' : ''} ${scheme}`}>
@@ -65,6 +80,25 @@ export const Header = () => {
       <a href="#ContactForm" className="header-cta">
         Cotización
       </a>
+
+      <button
+        className={`header-hamburger ${menuOpen ? 'open' : ''}`}
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
+      >
+        {menuOpen ? <X size={24} /> : <Menu size={24} />}
+      </button>
+
+      <div className={`header-mobile-menu ${menuOpen ? 'open' : ''}`}>
+        {navItems.map((item, index) => (
+          <a key={index} href={item.href} onClick={handleNavClick}>
+            {item.label}
+          </a>
+        ))}
+        <a href="#ContactForm" className="header-mobile-cta" onClick={handleNavClick}>
+          Solicitar cotización
+        </a>
+      </div>
     </header>
   );
 };

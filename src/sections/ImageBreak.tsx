@@ -14,7 +14,7 @@ export const ImageBreak = () => {
           Desde el manantial<br />hasta tu oficina
         </h2>
         <p className="image-break__sub">
-          Agua de origen de montaña, purificada con 5 etapas de filtración y entregada directamente en tu sede.
+          Agua de origen de montaña, purificada con microfiltración y desinfección con rayos UV. Entregada directamente en tu sede.
         </p>
       </div>
     </section>
