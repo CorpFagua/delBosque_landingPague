@@ -12,24 +12,24 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     name: 'María González',
-    role: 'Propietaria de familia',
-    content: 'Hace 2 años que usamos delbosque. La calidad del agua es incomparable y el servicio a domicilio es muy confiable. Mi familia confía en ustedes.',
+    role: 'Coordinadora administrativa – Colegio San Jorge, Chía',
+    content: 'Llevamos dos años trabajando con Delbosque. La entrega es puntual, la factura llega a tiempo y el agua cumple todos los requisitos del colegio. Sin complicaciones.',
     rating: 5,
-    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80',
+    avatar: '/images/testimonial-maria.webp',
   },
   {
     name: 'Dr. Carlos Rodríguez',
-    role: 'Médico',
-    content: 'Como profesional de salud, valoro mucho las certificaciones INVIMA. Es agua de calidad premium, perfecto para mi consultorio.',
+    role: 'Director médico – Clínica Santa Bárbara, Bogotá',
+    content: 'Valoramos el registro INVIMA y la documentación de calidad que entregan. Para un entorno de salud no se puede improvisar con el proveedor de agua.',
     rating: 5,
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80',
+    avatar: '/images/testimonial-carlos.webp',
   },
   {
     name: 'Andrea López',
-    role: 'Directora de Restaurante',
-    content: 'Nuestros clientes notan la diferencia en la calidad del agua. delbosque es nuestro proveedor exclusivo desde hace más de un año.',
+    role: 'Gerente de operaciones – Constructora Andina, Sabana',
+    content: 'Manejamos tres frentes de obra simultáneos y Delbosque coordina la entrega en cada sitio bajo cronograma. El ejecutivo de cuenta resuelve cualquier novedad al instante.',
     rating: 5,
-    avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80',
+    avatar: '/images/testimonial-andrea.webp',
   },
 ];
 
@@ -58,7 +58,7 @@ export const Testimonials = () => {
           viewport={{ once: true }}
         >
           <h2>Lo que dicen nuestros clientes</h2>
-          <p>Testimonios reales de personas que confían en la calidad de delbosque.</p>
+          <p>Empresas e instituciones en Bogotá y Sabana que ya tienen convenio activo con Delbosque.</p>
         </motion.div>
 
         <motion.div
@@ -81,6 +81,10 @@ export const Testimonials = () => {
                   src={testimonial.avatar}
                   alt={testimonial.name}
                   className="testimonial-card__avatar"
+                  loading="lazy"
+                  decoding="async"
+                  width="100"
+                  height="100"
                 />
                 <div>
                   <h4>{testimonial.name}</h4>

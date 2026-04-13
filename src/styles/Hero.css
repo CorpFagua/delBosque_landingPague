@@ -23,33 +23,20 @@
   z-index: 0;
 }
 
-/* Overlay con tinte azul cobalto — coherente con identidad de marca */
-.hero-overlay {
+/* Canvas de partículas — overlay oscuro con huecos destination-out */
+.hero-canvas {
   position: absolute;
   inset: 0;
-  background:
-    /* Vignette central detrás del texto */
-    radial-gradient(ellipse 68% 46% at 50% 36%, rgba(0, 0, 0, 0.48) 0%, transparent 72%),
-    /* Sombra negra suave desde abajo hasta la mitad — realza el glass */
-    linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.52) 0%,
-      rgba(0, 0, 0, 0.22) 28%,
-      transparent 52%
-    ),
-    /* Degradado oscuro sutil en la parte superior */
-    linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.38) 0%,
-      transparent 30%
-    );
-  z-index: 1;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
 }
 
 /* Contenedor principal centrado */
 .hero-center {
   position: relative;
-  z-index: 2;
+  z-index: 4;
   display: flex;
   flex-direction: column;
   align-items: center;

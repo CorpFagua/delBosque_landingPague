@@ -42,7 +42,7 @@ export const CTA = () => {
           <div className="cta__info">
             <p>
               <Phone size={16} className="cta__inline-icon" />
-              <strong>Pedidos:</strong> WhatsApp +57 300 123 4567
+              <strong>Pedidos:</strong> WhatsApp +57 321 421 9294
             </p>
             <p>
               <Briefcase size={16} className="cta__inline-icon" />
@@ -52,7 +52,7 @@ export const CTA = () => {
 
           <div className="cta__premium">
             <Award size={20} className="cta__inline-icon" />
-            <p>Proveedor certificado INVIMA de agua purificada</p>
+            <p>Proveedor con registro INVIMA de agua purificada</p>
           </div>
         </div>
       </motion.div>

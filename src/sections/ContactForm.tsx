@@ -1,54 +1,87 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import '../styles/ContactForm.css';
-import contactImage from '../assets/bosque.png';
+import contactImageFallback from '../assets/robot_img.png';
 
-// TODO: Reemplazar con el número real del negocio (solo dígitos, con código de país)
-const BUSINESS_WHATSAPP = '573001234567';
+// URL del backend API
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
 
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     company: '',
+    email: '',
     address: '',
     phone: '',
+    message: '',
   });
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
+    // Limpiar error cuando el usuario empieza a escribir
+    if (error) setError(null);
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
+    setError(null);
 
-    // Validación básica
-    if (!formData.name || !formData.company || !formData.phone) {
-      alert('Por favor completa los campos requeridos');
+    // Validación básica en el frontend
+    if (!formData.name || !formData.company || !formData.phone || !formData.email) {
+      setError('Por favor completa los campos requeridos: Nombre, Empresa, Email y Teléfono');
       setLoading(false);
       return;
     }
 
-    // Simular envío (se podría integrar con un backend real)
-    setTimeout(() => {
-      setSubmitted(true);
+    // Validación de email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setError('Por favor ingresa un email válido');
       setLoading(false);
+      return;
+    }
 
-      const message = `Hola, soy ${formData.name} de ${formData.company}. Dirección de entrega: ${formData.address || 'Por confirmar'}. Mi teléfono: ${formData.phone}. Quisiera cotizar abastecimiento de agua.`;
-      const whatsappLink = `https://wa.me/${BUSINESS_WHATSAPP}?text=${encodeURIComponent(message)}`;
-      window.open(whatsappLink, '_blank');
+    try {
+      // Enviar datos al backend
+      const response = await fetch(`${API_URL}/api/contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-      // Resetear formulario
-      setFormData({ name: '', company: '', address: '', phone: '' });
-      setTimeout(() => setSubmitted(false), 3000);
-    }, 1000);
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Error al enviar el formulario');
+      }
+
+      // Éxito
+      setSubmitted(true);
+      setFormData({ name: '', company: '', email: '', address: '', phone: '', message: '' });
+
+      // Esconder el mensaje de éxito después de 4 segundos
+      setTimeout(() => setSubmitted(false), 4000);
+    } catch (err: unknown) {
+      const errorMessage =
+        err instanceof Error
+          ? err.message
+          : 'No se pudo conectar con el servidor. Verifica que esté en línea.';
+      setError(errorMessage);
+      console.error('Error al enviar formulario:', err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const containerVariants = {
@@ -71,11 +104,18 @@ export const ContactForm = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <img
-              src={contactImage}
-              alt="Agua cristalina de montaña"
-              className="contact-form__photo"
-            />
+            <picture>
+              <source type="image/webp" srcSet="/images/robot_img.webp" />
+              <img
+                src={contactImageFallback}
+                alt="Agua cristalina de montaña"
+                className="contact-form__photo"
+                loading="lazy"
+                decoding="async"
+                width="928"
+                height="1149"
+              />
+            </picture>
           </motion.div>
 
           <motion.div
@@ -118,6 +158,19 @@ export const ContactForm = () => {
             </div>
 
             <div className="form-group">
+              <label htmlFor="email">Email de contacto *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Ej: carlos@empresa.com"
+                required
+              />
+            </div>
+
+            <div className="form-group">
               <label htmlFor="address">Dirección de entrega</label>
               <input
                 type="text"
@@ -142,6 +195,18 @@ export const ContactForm = () => {
               />
             </div>
 
+            <div className="form-group">
+              <label htmlFor="message">Mensaje (opcional)</label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Cuéntanos más detalles sobre tu necesidad de agua..."
+                rows={4}
+              />
+            </div>
+
             <motion.button
               type="submit"
               className="btn-primary contact-form__button"
@@ -149,8 +214,19 @@ export const ContactForm = () => {
               whileTap={{ scale: 0.98 }}
               disabled={loading}
             >
-              {loading ? 'Procesando...' : 'Enviar Cotización'}
+              {loading ? 'Enviando...' : 'Enviar Cotización'}
             </motion.button>
+
+            {error && (
+              <motion.div
+                className="form-error"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+              >
+                ❌ {error}
+              </motion.div>
+            )}
 
             {submitted && (
               <motion.div
@@ -159,7 +235,7 @@ export const ContactForm = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
               >
-                Formulario enviado exitosamente. Te redirigiremos a WhatsApp.
+                ✅ Formulario enviado exitosamente. Nos pondremos en contacto pronto.
               </motion.div>
             )}
           </form>

@@ -63,9 +63,13 @@ export const CorporateDeals = () => {
             viewport={{ once: true }}
           >
             <img
-              src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=600&q=80"
+              src="/images/corporate-meeting.webp"
               alt="Reunión empresarial corporativa"
               className="corporate-deals__photo"
+              loading="lazy"
+              decoding="async"
+              width="800"
+              height="533"
             />
           </motion.div>
 

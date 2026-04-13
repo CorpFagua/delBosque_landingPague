@@ -3,11 +3,18 @@ import '../styles/ImageBreak.css';
 export const ImageBreak = () => {
   return (
     <section className="image-break" data-header-scheme="on-dark">
-      <img
-        src="https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=1920&q=80"
-        alt="Paisaje de montaña y agua"
-        className="image-break__bg"
-      />
+      <picture>
+        <source type="image/webp" srcSet="/images/imagebreak-mountain.webp" />
+        <img
+          src="/images/imagebreak-mountain.webp"
+          alt="Paisaje de montaña con fuente de agua natural en Colombia"
+          className="image-break__bg"
+          loading="lazy"
+          decoding="async"
+          width="1920"
+          height="1280"
+        />
+      </picture>
       <div className="image-break__overlay" />
       <div className="image-break__content">
         <h2 className="image-break__title">

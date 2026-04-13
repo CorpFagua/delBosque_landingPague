@@ -5,7 +5,7 @@ import subLogo from '../assets/sub-logo.png';
 import whatsappIcon from '../assets/icons8-whatsapp.svg';
 import '../styles/WhatsAppFloat.css';
 
-const WHATSAPP_NUMBER = '573001234567';
+const WHATSAPP_NUMBER = '573214219294';
 
 const MESSAGES = [
   'Escríbenos, ¡es gratis!',

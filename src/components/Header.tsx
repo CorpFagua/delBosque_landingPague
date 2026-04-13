@@ -23,19 +23,37 @@ export const Header = () => {
   }, []);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            const s = (entry.target as HTMLElement).dataset.headerScheme as HeaderScheme;
-            if (s) setScheme(s);
-          }
+    const HEADER_H = 80;
+
+    const updateScheme = () => {
+      const sections = Array.from(
+        document.querySelectorAll<HTMLElement>('[data-header-scheme]')
+      );
+      let active: HTMLElement | null = null;
+      for (const section of sections) {
+        if (section.getBoundingClientRect().top <= HEADER_H + 1) {
+          active = section;
         }
-      },
-      { rootMargin: '-1px 0px -99% 0px', threshold: 0 }
-    );
-    document.querySelectorAll('[data-header-scheme]').forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
+      }
+      if (active?.dataset?.headerScheme) {
+        setScheme(active.dataset.headerScheme as HeaderScheme);
+      }
+    };
+
+    let ticking = false;
+    const handleSchemeScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          updateScheme();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    updateScheme();
+    window.addEventListener('scroll', handleSchemeScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleSchemeScroll);
   }, []);
 
   useEffect(() => {

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Droplets, Package, ClipboardList, Landmark } from 'lucide-react';
 import type { ReactNode } from 'react';
 import '../styles/Products.css';
-import botellones from '../assets/botellonesduo.png';
+import botellonesFallback from '../assets/botellonesduo.png';
 
 interface Product {
   icon: ReactNode;
@@ -58,11 +58,18 @@ export const Products = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <img
-              src={botellones}
-              alt="Botellones Del Bosque 18.9L y 10L con agua de manantial"
-              className="products__hero-img"
-            />
+            <picture>
+              <source type="image/webp" srcSet="/images/botellonesduo.webp" />
+              <img
+                src={botellonesFallback}
+                alt="Botellones Del Bosque 18.9L y 10L con agua de manantial"
+                className="products__hero-img"
+                loading="lazy"
+                decoding="async"
+                width="1024"
+                height="1024"
+              />
+            </picture>
           </motion.div>
 
           <div className="products__text-col">

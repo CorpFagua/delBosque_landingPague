@@ -1,4 +1,4 @@
-import { Facebook, Instagram, MessageCircle } from 'lucide-react';
+import { FaFacebook, FaInstagram, FaWhatsapp, FaTiktok } from 'react-icons/fa';
 import '../styles/Footer.css';
 
 export const Footer = () => {
@@ -10,16 +10,19 @@ export const Footer = () => {
         <div className="footer__content">
           <div className="footer__section">
             <h4>delbosque</h4>
-            <p>Agua purificada de calidad premium con certificaciones INVIMA para tu confianza.</p>
+            <p>Agua purificada de calidad premium con registro INVIMA para tu confianza.</p>
             <div className="footer__socials">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                <Facebook size={18} />
+              <a href="https://www.facebook.com/share/1KvWjZTK1P/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <FaFacebook size={18} />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <Instagram size={18} />
+              <a href="https://www.instagram.com/aguadelbosque1?igsh=OGpoZHJvMnp3b29u" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <FaInstagram size={18} />
               </a>
-              <a href="https://wa.me/573001234567" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-                <MessageCircle size={18} />
+              <a href="https://www.tiktok.com/@delbosque.distrib?_r=1&_t=ZS-95SmG1yFVYq" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                <FaTiktok size={18} />
+              </a>
+              <a href="https://wa.me/573214219294" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <FaWhatsapp size={18} />
               </a>
             </div>
           </div>
@@ -42,32 +45,18 @@ export const Footer = () => {
             </ul>
           </div>
 
-          <div className="footer__section">
-            <h4>Legal</h4>
-            <ul>
-              <li>
-                <a href="#">Términos y condiciones</a>
-              </li>
-              <li>
-                <a href="#">Política de privacidad</a>
-              </li>
-              <li>
-                <a href="#">Política de datos</a>
-              </li>
-            </ul>
-          </div>
 
           <div className="footer__section">
             <h4>Contacto</h4>
             <p>
               <strong>Email:</strong>
               <br />
-              info@delbosque.com.co
+              distribuidoradelbosque2@gmail.com 
             </p>
             <p>
               <strong>WhatsApp:</strong>
               <br />
-              +57 300 123 4567
+              +57 321 421 9294
             </p>
             <p>
               <strong>Ubicación:</strong>
@@ -83,7 +72,7 @@ export const Footer = () => {
           <p>
             &copy; {currentYear} delbosque. Todos los derechos reservados.
             <br />
-            Distribuidora de agua purificada certificada INVIMA
+            Distribuidora de agua purificada con registro INVIMA
           </p>
         </div>
       </div>

@@ -3,31 +3,84 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Agua Delbosque - Proveedor de agua purificada certificada INVIMA para empresas en Sabana de Bogotá y Bogotá. Abastecimiento programado a colegios, clínicas, oficinas, constructoras y comercios." />
-    <meta name="keywords" content="agua purificada Bogotá, agua empresarial Sabana de Bogotá, proveedor agua colegios, agua clínicas Bogotá, botellones empresas, agua constructoras, INVIMA certificado, agua Chía, agua Cota, agua Cajicá" />
+
+    <!-- ─── SEO primario ──────────────────────────────────────────────────── -->
+    <meta name="description" content="Agua Delbosque – Proveedor de agua purificada con registro INVIMA para empresas en Bogotá y Sabana de Bogotá. Entrega programada a colegios, clínicas, oficinas, constructoras y comercios. Convenios empresariales con facturación electrónica." />
+    <meta name="keywords" content="agua purificada Bogotá, proveedor agua empresarial Sabana de Bogotá, botellones agua colegios Bogotá, agua clínicas certificada, agua constructoras Chía Cota Cajicá, INVIMA agua empresarial, agua Zipaquirá Funza Mosquera, entrega agua programada empresas" />
     <meta name="author" content="Agua Delbosque" />
     <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="Agua Delbosque - Agua Purificada Empresarial en Bogotá y Sabana" />
-    <meta property="og:description" content="Botellones de agua purificada con registro INVIMA. Entrega programada a empresas, colegios, clínicas y constructoras en Sabana de Bogotá y Bogotá." />
+
+    <!-- ─── SEO geolocalizado Colombia ──────────────────────────────────── -->
+    <meta name="geo.region" content="CO-CUN" />
+    <meta name="geo.placename" content="Bogotá, Cundinamarca, Colombia" />
+    <meta name="geo.position" content="4.6097;-74.0817" />
+    <meta name="ICBM" content="4.6097, -74.0817" />
+
+    <!-- ─── Open Graph ────────────────────────────────────────────────────── -->
+    <meta property="og:title" content="Agua Delbosque – Agua Purificada Empresarial en Bogotá y Sabana" />
+    <meta property="og:description" content="Botellones de agua purificada con registro INVIMA. Entrega programada, facturación electrónica y ejecutivo dedicado para empresas en Sabana de Bogotá." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://aguadelbosque.com" />
-    <meta property="og:image" content="https://aguadelbosque.com/og-image.png" />
-    
-    <!-- Schema.json Structured Data -->
+    <meta property="og:image" content="https://aguadelbosque.com/images/og-image.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:site_name" content="Agua Delbosque" />
+
+    <!-- ─── Twitter / X Card ─────────────────────────────────────────────── -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Agua Delbosque – Agua Purificada Empresarial en Bogotá y Sabana" />
+    <meta name="twitter:description" content="Botellones con registro INVIMA. Convenios empresariales con entrega programada en Sabana de Bogotá." />
+    <meta name="twitter:image" content="https://aguadelbosque.com/images/og-image.webp" />
+
+    <!-- ─── Schema.org LocalBusiness ─────────────────────────────────────── -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Agua Delbosque",
-      "description": "Soluciones profesionales de hidratación empresarial",
+      "description": "Proveedor de agua purificada con registro INVIMA para empresas, colegios, clínicas y constructoras en Bogotá y Sabana de Bogotá. Entrega programada y facturación electrónica.",
       "url": "https://aguadelbosque.com",
-      "image": "https://aguadelbosque.com/logo.png",
-      "areaServed": ["Bogotá", "Sabana de Bogotá", "Chía", "Cota", "Cajicá", "Zipaquirá","Funza","Mosquera"],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "Customer Service",
-        "telephone": "+57-300-1234567",
-        "contactOption": "TollFree"
+      "image": "https://aguadelbosque.com/sublogo.png",
+      "telephone": "+57-300-1234567",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bogotá",
+        "addressRegion": "Cundinamarca",
+        "addressCountry": "CO"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 4.6097,
+        "longitude": -74.0817
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "07:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:00",
+          "closes": "13:00"
+        }
+      ],
+      "areaServed": [
+        "Bogotá", "Sabana de Bogotá", "Chía", "Cota", "Cajicá",
+        "Zipaquirá", "Funza", "Mosquera", "Madrid", "Facatativá"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Agua Purificada Empresarial",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Botellón retornable 18.9L" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Bolsas de agua individual" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Plan mensual programado" } }
+        ]
       },
       "sameAs": [
         "https://www.facebook.com/aguadelbosque",
@@ -35,10 +88,15 @@
       ]
     }
     </script>
-    
-    <title>Agua Delbosque - Agua Purificada Empresarial en Bogotá y Sabana | INVIMA</title>
+
+    <title>Agua Delbosque – Agua Purificada Empresarial en Bogotá y Sabana | INVIMA</title>
     <link rel="icon" type="image/png" href="/sublogo.png" />
     <link rel="canonical" href="https://aguadelbosque.com" />
+
+    <!-- ─── Precarga LCP — hero de imagen crítica ─────────────────────────── -->
+    <link rel="preload" as="image" href="/images/hero-background.webp" fetchpriority="high" type="image/webp" />
+
+    <!-- ─── Fuentes ───────────────────────────────────────────────────────── -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..800&display=swap" rel="stylesheet" />
