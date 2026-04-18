@@ -1,0 +1,24 @@
+{
+  "name": "Agua Delbosque",
+  "short_name": "Delbosque",
+  "description": "Proveedor de agua purificada empresarial en Bogotá y Sabana de Bogotá, Colombia.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#061833",
+  "theme_color": "#061833",
+  "lang": "es-CO",
+  "icons": [
+    {
+      "src": "/sublogo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/sublogo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

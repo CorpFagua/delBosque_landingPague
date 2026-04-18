@@ -9,6 +9,7 @@ import { Sectors } from './sections/Sectors';
 import { CorporateDeals } from './sections/CorporateDeals';
 //import { Testimonials } from './sections/Testimonials';
 import { Certifications } from './sections/Certifications';
+import { FAQ } from './sections/FAQ';
 import { ContactForm } from './sections/ContactForm';
 import { CTA } from './sections/CTA';
 import { Footer } from './sections/Footer';
@@ -27,6 +28,7 @@ function App() {
       <CorporateDeals />
       {/* <Testimonials /> */}
       <Certifications />
+      <FAQ />
       <ContactForm />
       <CTA />
       <Footer />
