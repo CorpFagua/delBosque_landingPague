@@ -18,7 +18,7 @@ export const ImageBreak = () => {
       <div className="image-break__overlay" />
       <div className="image-break__content">
         <h2 className="image-break__title">
-          Desde el manantial<br />hasta tu oficina
+          Agua 100% natural<br />hasta tu oficina
         </h2>
         <p className="image-break__sub">
           Agua de origen de montaña, purificada con microfiltración y desinfección con rayos UV. Entregada directamente en tu sede.
