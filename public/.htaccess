@@ -1,0 +1,51 @@
+# Páginas legales estáticas: servir /privacidad y /eliminacion-de-datos con 200,
+# sin el 301 automático hacia la versión con barra final.
+<IfModule mod_dir.c>
+  DirectorySlash Off
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Páginas legales (deben ir antes del fallback de la SPA)
+  RewriteRule ^(privacidad|eliminacion-de-datos)/?$ /$1/index.html [L]
+
+  # Mantener index.html como está
+  RewriteRule ^index\.html$ - [L]
+
+  # Si la carpeta o archivo NO existe, redirigir a index.html
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
+
+# GZIP Compression para assets
+<IfModule mod_deflate.c>
+  AddType application/javascript js
+  AddEncoding gzip .gz
+  <FilesMatch "\.(js|css|html|xml|txt|svg)$">
+    SetOutputFilter DEFLATE
+  </FilesMatch>
+</IfModule>
+
+# Cache para archivos estáticos
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/gif "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType text/css "access plus 1 month"
+</IfModule>
+
+# Headers de seguridad
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-XSS-Protection "1; mode=block"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

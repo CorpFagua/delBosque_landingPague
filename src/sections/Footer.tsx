@@ -74,6 +74,10 @@ export const Footer = () => {
             <br />
             Distribuidora de agua purificada con registro INVIMA
           </p>
+          <nav className="footer__legal" aria-label="Enlaces legales">
+            <a href="/privacidad">Política de privacidad</a>
+            <a href="/eliminacion-de-datos">Eliminación de datos</a>
+          </nav>
         </div>
       </div>
     </footer>

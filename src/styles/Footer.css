@@ -85,6 +85,24 @@
   margin: 0;
 }
 
+.footer__legal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-sm) var(--spacing-lg);
+  margin-top: var(--spacing-md);
+}
+
+.footer__legal a {
+  color: var(--color-neutral-gray);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer__legal a:hover {
+  color: var(--color-primary-lighter);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .footer {
